@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-
+   # rootをログイン画面に設定
+   devise_scope :user do
+    root "users/sessions#new"
+  end
 end
