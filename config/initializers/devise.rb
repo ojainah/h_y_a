@@ -1,7 +1,7 @@
 class CustomFailure < Devise::FailureApp
   def redirect_url
     # 未ログインでアクセスしてきたときはサインアップページへリダイレクト
-    new_user_registration_path
+    new_user_session_path
   end
 end
 
