@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # 常にログインを要求する
   before_action :authenticate_user!
 
-  # 簡単に言えばよく分からんパラメーターは渡せないようになってるので渡せるようにします。
+  # 弾かれがちな不明なパラメーターも渡せるようにする。
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
