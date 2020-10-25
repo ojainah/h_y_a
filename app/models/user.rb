@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
         #  :confirmable, 
          :lockable, :timeoutable, :trackable
+
+  #  nameに空欄は許しませんよ！
+  validates :name, presence: true
+  # profileは２００文字に抑えてくさだいね！
+  validates :profile, length: { maximum: 200 }
 end

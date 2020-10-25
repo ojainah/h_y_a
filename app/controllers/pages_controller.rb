@@ -3,8 +3,15 @@ class PagesController < ApplicationController
   before_action :sign_in_required, only: [:show]
 
   def index
+
   end
 
   def show
+    @users = User.all
+    @user = User.find_by(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:username)
   end
 end

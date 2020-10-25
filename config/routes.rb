@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   get 'pages/show'
+  get 'users/show'
+  resources :users
+
 end

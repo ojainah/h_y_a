@@ -1,2 +1,16 @@
-<h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>ユーザー用ページです。</p>
+<h1>ユーザー一覧</h1>
+ <div class="profile_list">
+   <table>
+     <theader>
+     </theader>
+     <tbody>
+       <% @users.each do |user| %>
+         <tr>
+           <td>
+             <%= link_to @user.username, users/show %>
+           </td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+</div>  
