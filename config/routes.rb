@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   get 'pages/show'
-
-  resources :users
+  get "pages/:id" => "pages#profile"
+  
 
 end

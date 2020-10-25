@@ -11,6 +11,10 @@ class PagesController < ApplicationController
     @user = User.find_by(params[:id])
   end
 
+  def profile
+    @user = User.find_by(id: params[:id])
+  end
+
   def user_params
     params.require(:user).permit(:username)
   end

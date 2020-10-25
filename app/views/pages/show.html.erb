@@ -7,10 +7,10 @@
        <% @users.each do |user| %>
          <tr>
            <td>
-             <%= link_to @user.username, "" %>
+             <%= link_to(@user.username, "/pages/#{user.id}") %>
            </td>
          </tr>
        <% end %>
      </tbody>
-   </table>
+   </table> 
 </div>  
