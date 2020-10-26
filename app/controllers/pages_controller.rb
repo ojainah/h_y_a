@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @users = User.all
     @user = User.find_by(id: params[:id])
   end
 

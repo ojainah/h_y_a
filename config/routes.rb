@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
 
   ## ユーザー登録のメール送信後に送信完了画面へと遷移
-  devise_for :users# , :controllers => { :registrations => "registrations" }
+  devise_for :users
+  # , :controllers => { :registrations => "registrations" }
 
   root 'pages#index'
   get 'pages/show'

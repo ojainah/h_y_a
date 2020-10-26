@@ -8,6 +8,14 @@ class RegistrationsController < Devise::RegistrationsController
 #    def after_inactive_sign_up_path_for(resource)# メール送信後の遷移先を指定
 #     user_precomplete_path
 #    end
+  #  更新（編集の反映）時にパスワード入力を省く
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
 
 protected
   # アカウント編集後、プロフィール画面に移動する

@@ -1,4 +1,9 @@
-<h1>about me</h1>
-<%= @id %>
+
+
 
 <h2><%= @user.username %></h2>
+<%= link_to("編集", "/users/edit") %>
+<span class="far fa-edit"></span>
+<span class="fas fa-users"></span>
+
+<p>最終ログイン<%= @user.last_sign_in_at %></p>
