@@ -19,4 +19,9 @@ class PagesController < ApplicationController
   def user_params
     params.require(:user).permit(:username)
   end
+
+  def follow
+    @users = User.all
+    @user = User.find_by(id: params[:id])
+  end
 end
