@@ -1,16 +1,1 @@
 <h1>フォローリスト</h1>
- <div class="follow_list">
-   <table>
-     <theader>
-     </theader>
-     <tbody>
-       <% @users.each do |user| %>
-         <tr>
-           <td>
-             <%= link_to(@user.username, "/pages/#{user.id}") %>
-           </td>
-         </tr>
-       <% end %>
-     </tbody>
-   </table>   
-</div>  
