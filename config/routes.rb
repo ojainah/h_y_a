@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get "pages/:id" => "pages#profile"
   get "pages/follow" => "pages#follow"
   
+  resources :relationships, only: [:create, :destroy]
 
 end
