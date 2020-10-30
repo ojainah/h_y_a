@@ -31,8 +31,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :user
 
 
-
-
+  
   # ＜フォロー機能のメソッド＞
   # 注意すべき点は、フォローが自分自身ではないか？とすでにフォローしていないか？
 
