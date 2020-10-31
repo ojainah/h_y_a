@@ -4,11 +4,9 @@ class RelationshipsController < ApplicationController
   def create
     following = current_user.follow(@user)
     if following.save
-      flash[:success] = 'ユーザーをフォローしました'
-      redirect_to @user
+      redirect_to controller: :pages, action: :profile, id: @user, success: "ユーザーをフォローしました"
     else
-      flash.now[:alert] = 'ユーザーのフォローに失敗しました'
-      redirect_to @user
+      flash.now[:alert] = "ユーザーのフォローに失敗しました"
     end
   end
 
@@ -16,16 +14,15 @@ class RelationshipsController < ApplicationController
   def destroy
     following = current_user.unfollow(@user)
     if following.destroy
-      flash[:success] = "ユーザーのフォローを解除しました"
-      redirect_to @user
+      redirect_to controller: :pages, action: :profile, id: @user, success:  "ユーザーのフォローを解除しました"
     else
       flash.now[:alert] = "ユーザーのフォロー解除に失敗しました"
-      redirect_to @user
     end
   end
 
+  # 呼び出しをクラス内部に限定する
   private
   def set_user
-    @user = User.find params[:follow_id]
+    @user = User.find(params[:follow_id])
   end
 end

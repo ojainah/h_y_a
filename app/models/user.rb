@@ -31,9 +31,9 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :user
 
 
-  
+
   # ＜フォロー機能のメソッド＞
-  # 注意すべき点は、フォローが自分自身ではないか？とすでにフォローしていないか？
+  # 注意すべき点は、フォローが自分自身ではないか？＆すでにフォローしていないか？
 
   # unless self == other_user によって、フォローしようとしている other_user が自分自身ではないかを検証
   def follow(other_user)
