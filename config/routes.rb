@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/show'
   get "pages/:id" => "pages#profile"
-  get "pages/follow" => "pages#follow"
+  
   
   resources :relationships, only: [:create, :destroy]
 

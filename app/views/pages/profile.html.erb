@@ -6,10 +6,15 @@
 <i class="far fa-edit"></i>
 <% end %>
 
+<%# <i class="fas fa-user-plus"></i> %> 
+<%# <i class="fas fa-user-friends"></i> %>
 <%= link_to "pages#follow", method: :get do %>
 <i class="fas fa-users"></i>
 <% end %>
 
+<%= link_to relationships_path(@user), method: :post do %>
+<i class="fas fa-user-plus"></i>
+<% end %>
 
 <p>最終ログイン<%= @user.last_sign_in_at %></p>
 

@@ -1,11 +1,12 @@
 class RelationshipsController < ApplicationController
-  before_action :set_user
+  before_action :set_user 
 
   def create
     following = current_user.follow(@user)
     if following.save
-      redirect_to controller: :pages, action: :profile, id: @user, success: "ユーザーをフォローしました"
+      redirect_to pages_show_path, flash: {notice: 'ユーザーをフォローしました' }
     else
+      render :back
       flash.now[:alert] = "ユーザーのフォローに失敗しました"
     end
   end
@@ -14,8 +15,9 @@ class RelationshipsController < ApplicationController
   def destroy
     following = current_user.unfollow(@user)
     if following.destroy
-      redirect_to controller: :pages, action: :profile, id: @user, success:  "ユーザーのフォローを解除しました"
+      redirect_to pages_show_path, flash: {notice: 'ユーザーのフォローを解除しました' }
     else
+      render :back
       flash.now[:alert] = "ユーザーのフォロー解除に失敗しました"
     end
   end
